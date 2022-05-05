@@ -1,4 +1,4 @@
-## show_image
+## show-image
 
 ### 介绍
 
