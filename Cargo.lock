@@ -4,16 +4,18 @@ version = 3
 
 [[package]]
 name = "kplayer-rust-wrap"
-version = "1.4.0"
+version = "1.5.0-rc1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "209b0b435ce0d9315fbd22af5f78db4c20666f70bb96d247483ee27075f7c820"
 dependencies = [
  "protobuf",
 ]
 
 [[package]]
 name = "protobuf"
-version = "2.25.2"
+version = "2.27.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "47c327e191621a2158159df97cdbc2e7074bb4e940275e35abf38eb3d2595754"
+checksum = "cf7e6d18738ecd0902d30d1ad232c9125985a3422929b16c65517b38adc14f96"
 
 [[package]]
 name = "show-image"

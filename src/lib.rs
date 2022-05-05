@@ -13,11 +13,17 @@ impl kplayer::plugin::BasePlugin for ShowOverlay {
     fn get_name(&self) -> String {
         String::from("show-image")
     }
-    fn get_args(&self) -> std::vec::Vec<std::string::String> {
+    fn get_args(
+        &mut self,
+        _custom_args: std::collections::HashMap<String, String>,
+    ) -> std::vec::Vec<std::string::String> {
         let mut args: Vec<std::string::String> = Vec::new();
         args.push(String::from("x=0"));
         args.push(String::from("y=0"));
         args
+    }
+    fn get_allow_custom_args(&self) -> Vec<&'static str> {
+        vec!["x", "y"]
     }
     fn get_author(&self) -> std::string::String {
         String::from("kplayer")
@@ -28,7 +34,10 @@ impl kplayer::plugin::BasePlugin for ShowOverlay {
     fn get_media_type(&self) -> kplayer::plugin::MediaType {
         kplayer::plugin::MediaType::MediaTypeVideo
     }
-    fn validate_user_args(&self, _args: &Vec<String>) -> std::result::Result<bool, &'static str> {
+    fn validate_user_args(
+        &self,
+        _args: std::collections::HashMap<String, String>,
+    ) -> std::result::Result<bool, &'static str> {
         Ok(true)
     }
 }
@@ -45,10 +54,16 @@ impl kplayer::plugin::BasePlugin for ShowMovie {
     fn get_name(&self) -> String {
         String::from("show-image")
     }
-    fn get_args(&self) -> std::vec::Vec<std::string::String> {
+    fn get_args(
+        &mut self,
+        _custom_args: std::collections::HashMap<String, String>,
+    ) -> std::vec::Vec<std::string::String> {
         let mut args: Vec<std::string::String> = Vec::new();
         args.push(String::from("filename=exmaple.png"));
         args
+    }
+    fn get_allow_custom_args(&self) -> Vec<&'static str> {
+        vec!["filename"]
     }
     fn get_author(&self) -> std::string::String {
         String::from("kplayer")
@@ -59,23 +74,17 @@ impl kplayer::plugin::BasePlugin for ShowMovie {
     fn get_media_type(&self) -> kplayer::plugin::MediaType {
         kplayer::plugin::MediaType::MediaTypeVideo
     }
-    fn validate_user_args(&self, _args: &Vec<String>) -> std::result::Result<bool, &'static str> {
-        for str in _args {
-            let sp: Vec<&str> = str.split('=').collect();
-            if sp.len() < 2 {
-                self.print_log(
-                    kplayer::util::os::PrintLogLevel::ERROR,
-                    format!("validate args failed arg string: {}", str).as_str(),
-                );
-                return Err("args format error");
-            }
-
+    fn validate_user_args(
+        &self,
+        _args: std::collections::HashMap<String, String>,
+    ) -> std::result::Result<bool, &'static str> {
+        for (key, value) in _args {
             // validate image file exist
-            if sp[0] == "filename" {
-                if !kplayer::util::os::file_exist(sp[1].to_string()) {
+            if key == String::from("filename") {
+                if !kplayer::util::os::file_exist(&value) {
                     self.print_log(
                         kplayer::util::os::PrintLogLevel::ERROR,
-                        format!("image file not eixst: {}", sp[1]).as_str(),
+                        format!("image file not eixst: {}", &value).as_str(),
                     );
                     return Err("image file not exist");
                 }

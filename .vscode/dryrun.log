@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/kangkai/smart/develop/rust/show-image'
+cargo build --target wasm32-wasi --release
+cp -f target/wasm32-wasi/release/show_image.wasm target/wasm32-wasi/release/show_image.kpe
+make: Leaving directory `/Users/kangkai/smart/develop/rust/show-image'
+ 
