@@ -92,6 +92,9 @@ impl kplayer::plugin::BasePlugin for ShowMovie {
         }
         Ok(true)
     }
+    fn get_instance_type(&mut self) -> kplayer::plugin::InstanceType {
+        kplayer::plugin::InstanceType::InstanceTypeSide
+    }
 }
 
 kplayer_rust_wrap::export!(ShowOverlay, ShowMovie);
