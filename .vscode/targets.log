@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Jul 27 10:46:04 2022
+# Make data base, printed on Wed Jul 27 15:55:58 2022
 
 # Variables
 
@@ -53,6 +53,9 @@ PATH = /opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 # environment
 DISABLE_UPDATE_PROMPT = true
 # environment
+ 
+make: *** No rule to make target `all'.  Stop.
+
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 LaunchInstanceID = 4BD057F3-2C57-46CF-9D22-2746A1F7DA20
@@ -105,7 +108,7 @@ LC_TERMINAL = iTerm2
 # environment
 SHLVL = 3
 # environment
-TERM_SESSION_ID = w0t0p0:F4B7CB73-0853-4258-ACDD-3CA39C312B9C
+TERM_SESSION_ID = w0t0p0:46040E66-468F-4D9B-8C39-7A5121507CE1
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -145,7 +148,7 @@ CGO_LDFLAGS = -L/opt/local/zulu8.56.0.23-ca-jdk8.0.302-macosx_aarch64/jre/lib/se
 # environment
 TERM_PROGRAM_VERSION = 3.4.15
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCodeInsiders.19047083.19047089.E47D129C-9CE9-4706-89C7-08710BE77587
+XPC_SERVICE_NAME = application.com.microsoft.VSCodeInsiders.19047083.19047089.02F8737E-F80C-42D4-94A2-D0970F822972
 # environment
 LC_TERMINAL_VERSION = 3.4.15
 # automatic
@@ -153,7 +156,7 @@ LC_TERMINAL_VERSION = 3.4.15
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:F4B7CB73-0853-4258-ACDD-3CA39C312B9C
+ITERM_SESSION_ID = w0t0p0:46040E66-468F-4D9B-8C39-7A5121507CE1
 # environment
 COLORFGBG = 15;0
 # environment
@@ -195,9 +198,9 @@ VSCODE_PID = 45671
 
 # Directories
 
-# . (device 16777234, inode 1800044): 11 files, no impossibilities.
+# . (device 16777234, inode 1800044): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -277,8 +280,6 @@ src/lib.rs:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jul 27 10:46:04 2022
+# Finished Make data base on Wed Jul 27 15:55:58 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-
